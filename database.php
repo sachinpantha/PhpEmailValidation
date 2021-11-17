@@ -4,10 +4,10 @@
 return [
             [
                 'name'=>'Sachin Pantha',
-                'email'=>'Sachinpantha99@gmail.com',
+                'email'=>'Sachinpantha22@gmail.com',
                 'password'=>md5('admin123'),
                 //md5('admin123')
-                'phone_no'=>'986662211334'
+                'phone_no'=>'986612211334'
             ],
 
             [
