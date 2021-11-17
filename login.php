@@ -29,7 +29,8 @@ if (isset($_POST['submit'])) {
       foreach($db as $item){
           if ($email==$item['email']) {
               if (md5($password)==$item['password']) {
-                $msg= "Login success";
+                     include 'test.html';
+
               }
               else {
                   $PassErr="password didn't matched";
@@ -41,14 +42,55 @@ if (isset($_POST['submit'])) {
               $NotFound="User not found";
           }
       }
-      echo $msg."<br>";
-      echo $PassErr."<br>";
-      echo $NotFound."<br>";
+      if (isset($msg)) {
+          
+          echo $msg."<br>";
+      }
+      if (isset($PassErr)) {
+         
+          echo $PassErr."<br>";
+      }
+      if (isset($NotFound)) {
+
+          echo $NotFound."<br>";
+      }
    }
 }
 ?>
-<form action="" method="POST">
-    Email <input type="email" name="email" id=""><br><br>
-    Password <input type="password" name="password" id=""><br>
-    <button type="submit" name="submit">Submit</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>phpvalidation</title>
+    <style>
+        .container{
+            padding: 20px;
+            border:1px solid black;
+            width: 300px;
+            margin: 0 auto;
+            background-color: #ccc;
+            border-radius: 10px;
+        }
+        .btn{
+            border:1px solid black;
+            padding: 5px;
+            margin-left: 36%;
+            margin-top: 12px;
+        }
+        .btn:hover{
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="" method="POST">
+            Email <input type="email" name="email" id=""><br><br>
+            Password <input type="password" name="password" id=""><br>
+            <button type="submit" class="btn" name="submit">Submit</button>
+        </form>
+    </div>   
+</body>
+</html>
